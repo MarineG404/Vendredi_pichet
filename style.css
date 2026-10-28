@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Josefin+Slab:wght@400&display=swap');
+
+:root {
+  --accent: #ff3333;
+  --fond: #ffffff;
+  --texte: #000000;
+  --gris-clair: #f3f3f3;
+  --gris-bord: #d8d8d8;
+  --gris-texte: #818181;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: 'Josefin Slab', serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1, h2, .compteur {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 8vw, 2.8rem);
+  line-height: 1.05;
+  margin: 0;
+}
+
+h2 {
+  font-size: 0.95rem;
+  margin: 0 0 16px;
+}
+
+.accent { color: var(--accent); }
+
+.sous-titre {
+  margin: 8px 0 0;
+  color: var(--gris-texte);
+}
+
+.compteur-bloc {
+  margin: 32px 0;
+  padding: 28px 16px;
+  border-top: 4px solid var(--texte);
+  border-bottom: 1px solid var(--gris-bord);
+  text-align: center;
+}
+
+.compteur {
+  font-size: clamp(1.6rem, 9vw, 3rem);
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.compteur.cedric {
+  font-size: clamp(1.4rem, 7.5vw, 2.6rem);
+  letter-spacing: 0.02em;
+}
+
+.compteur.fini { color: var(--texte); }
+
+.detail {
+  margin: 12px 0 0;
+  color: var(--gris-texte);
+}
+
+.reglages {
+  background: var(--gris-clair);
+  padding: 20px 16px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 520px) {
+  form { grid-template-columns: 1fr 1fr; }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input {
+  font: inherit;
+  font-size: 1.3rem;
+  padding: 8px 10px;
+  border: 1px solid var(--gris-bord);
+  background: var(--fond);
+  color: var(--texte);
+  border-radius: 0;
+}
+
+input:focus-visible,
+.bouton:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.aide {
+  margin: 12px 0 20px;
+  color: var(--gris-texte);
+  font-size: 1.05rem;
+}
+
+.bouton {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 12px 18px;
+  border: 2px solid var(--texte);
+  background: var(--fond);
+  color: var(--texte);
+  cursor: pointer;
+}
+
+.bouton[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--fond);
+}

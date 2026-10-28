@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendredi pichet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Vendredi <span class="accent">pichet</span></h1>
+      <p class="sous-titre">Temps de travail restant avant vendredi 16h</p>
+    </header>
+
+    <section class="compteur-bloc" aria-live="off">
+      <div id="compteur" class="compteur">--</div>
+      <p id="detail" class="detail"></p>
+    </section>
+
+    <section class="reglages">
+      <h2>Ta journée</h2>
+      <form id="form" autocomplete="off">
+        <label>Début de journée
+          <input type="time" id="debut" required>
+        </label>
+        <label>Fin de journée
+          <input type="time" id="fin" required>
+        </label>
+        <label>Pause par jour (min)
+          <input type="number" id="pause" min="0" max="480" step="5" required>
+        </label>
+        <label>Pause restante aujourd'hui (min)
+          <input type="number" id="pauseRestante" min="0" max="480" step="5" required>
+        </label>
+      </form>
+      <p class="aide">Mets à jour la pause restante au fil de la journée pour un calcul plus fiable.</p>
+
+      <button type="button" id="cedric" class="bouton" aria-pressed="false">
+        Mode Cédric : <span id="cedric-etat">off</span>
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
